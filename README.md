@@ -2,8 +2,7 @@
 
 This repo is used to show how to provision an AWS Glue Development Endpoint in a Private subnet.  The `main.tf` script assumes you already have a VPC, Private Subnet, necessary IAM Role and an EC2 deployed to the same private subnet.  
 ## Architecture
-![alt text](https://github.com/gravelgrinder/aws-vpc-tgw-demo/blob/main/architecture-diagram.png?raw=true)
-
+![alt text](https://github.com/gravelgrinder/aws-glue-private-development-endpoint/blob/main/architecture-diagram.png?raw=true)
 
 ## Create Resources
 1. Run the following to Initialize the Terraform environment.
