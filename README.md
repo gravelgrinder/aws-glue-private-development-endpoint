@@ -1,6 +1,9 @@
 # aws-glue-private-development-endpoint
 
 This repo is used to show how to provision an AWS Glue Development Endpoint in a Private subnet.  The `main.tf` script assumes you already have a VPC, Private Subnet, necessary IAM Role and an EC2 deployed to the same private subnet.  
+## Architecture
+![alt text](https://github.com/gravelgrinder/aws-vpc-tgw-demo/blob/main/architecture-diagram.png?raw=true)
+
 
 ## Create Resources
 1. Run the following to Initialize the Terraform environment.
@@ -57,6 +60,10 @@ EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
                                                                     
 [glue@ip-172-32-23-41 ~]$ 
 ```
+
+## Notes to Consider
+* When selecting the VPC, it must have access to an S3 endpoint to allow private connections to the S3 service.  This is needed if you define your Python library and dependent jars paths.
+* When selecting the VPC, Subnet and Security Groups, you must only select a Security Group that has a "self-referencing" rule.
 
 ## Clean up Resources
 1. To delete the resources created from the terraform script run the following.the destroy command.
